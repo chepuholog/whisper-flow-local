@@ -13,7 +13,7 @@ sys.path.insert(0, BASE_DIR)
 # Логирование в файл (т.к. запускается без консоли)
 log_path = os.path.join(BASE_DIR, "whisperflow.log")
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
         logging.FileHandler(log_path, encoding="utf-8"),
