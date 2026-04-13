@@ -5,3 +5,4 @@ dist/
 *.pyc
 prev_idle.png
 prev_rec.png
+*.log
