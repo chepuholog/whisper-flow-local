@@ -1,0 +1,91 @@
+2026-04-13 23:37:40,060 [INFO] Устройство ввода по умолчанию: Микрофон (HECATE G2 II GAMING H
+2026-04-13 23:37:40,072 [DEBUG] connect_tcp.started host='huggingface.co' port=443 local_address=None timeout=None socket_options=None
+2026-04-13 23:37:40,151 [INFO] Запущен. Зажмите CAPS LOCK для записи.
+2026-04-13 23:37:40,164 [DEBUG] Importing AvifImagePlugin
+2026-04-13 23:37:40,165 [DEBUG] Importing BlpImagePlugin
+2026-04-13 23:37:40,166 [DEBUG] Importing BmpImagePlugin
+2026-04-13 23:37:40,166 [DEBUG] Importing BufrStubImagePlugin
+2026-04-13 23:37:40,167 [DEBUG] Importing CurImagePlugin
+2026-04-13 23:37:40,168 [DEBUG] Importing DcxImagePlugin
+2026-04-13 23:37:40,169 [DEBUG] Importing DdsImagePlugin
+2026-04-13 23:37:40,175 [DEBUG] Importing EpsImagePlugin
+2026-04-13 23:37:40,176 [DEBUG] Importing FitsImagePlugin
+2026-04-13 23:37:40,176 [DEBUG] Importing FliImagePlugin
+2026-04-13 23:37:40,177 [DEBUG] Importing FpxImagePlugin
+2026-04-13 23:37:40,178 [DEBUG] Image: failed to import FpxImagePlugin: No module named 'olefile'
+2026-04-13 23:37:40,178 [DEBUG] Importing FtexImagePlugin
+2026-04-13 23:37:40,179 [DEBUG] Importing GbrImagePlugin
+2026-04-13 23:37:40,179 [DEBUG] Importing GifImagePlugin
+2026-04-13 23:37:40,180 [DEBUG] Importing GribStubImagePlugin
+2026-04-13 23:37:40,180 [DEBUG] Importing Hdf5StubImagePlugin
+2026-04-13 23:37:40,181 [DEBUG] Importing IcnsImagePlugin
+2026-04-13 23:37:40,183 [DEBUG] Importing IcoImagePlugin
+2026-04-13 23:37:40,184 [DEBUG] Importing ImImagePlugin
+2026-04-13 23:37:40,184 [DEBUG] Importing ImtImagePlugin
+2026-04-13 23:37:40,185 [DEBUG] Importing IptcImagePlugin
+2026-04-13 23:37:40,186 [DEBUG] Importing JpegImagePlugin
+2026-04-13 23:37:40,186 [DEBUG] Importing Jpeg2KImagePlugin
+2026-04-13 23:37:40,186 [DEBUG] Importing McIdasImagePlugin
+2026-04-13 23:37:40,186 [DEBUG] Importing MicImagePlugin
+2026-04-13 23:37:40,187 [DEBUG] Image: failed to import MicImagePlugin: No module named 'olefile'
+2026-04-13 23:37:40,187 [DEBUG] Importing MpegImagePlugin
+2026-04-13 23:37:40,188 [DEBUG] Importing MpoImagePlugin
+2026-04-13 23:37:40,189 [DEBUG] Importing MspImagePlugin
+2026-04-13 23:37:40,190 [DEBUG] Importing PalmImagePlugin
+2026-04-13 23:37:40,191 [DEBUG] Importing PcdImagePlugin
+2026-04-13 23:37:40,191 [DEBUG] Importing PcxImagePlugin
+2026-04-13 23:37:40,191 [DEBUG] Importing PdfImagePlugin
+2026-04-13 23:37:40,196 [DEBUG] Importing PixarImagePlugin
+2026-04-13 23:37:40,197 [DEBUG] Importing PngImagePlugin
+2026-04-13 23:37:40,197 [DEBUG] Importing PpmImagePlugin
+2026-04-13 23:37:40,197 [DEBUG] Importing PsdImagePlugin
+2026-04-13 23:37:40,198 [DEBUG] Importing QoiImagePlugin
+2026-04-13 23:37:40,198 [DEBUG] Importing SgiImagePlugin
+2026-04-13 23:37:40,199 [DEBUG] Importing SpiderImagePlugin
+2026-04-13 23:37:40,200 [DEBUG] Importing SunImagePlugin
+2026-04-13 23:37:40,200 [DEBUG] Importing TgaImagePlugin
+2026-04-13 23:37:40,201 [DEBUG] Importing TiffImagePlugin
+2026-04-13 23:37:40,201 [DEBUG] Importing WebPImagePlugin
+2026-04-13 23:37:40,202 [DEBUG] Importing WmfImagePlugin
+2026-04-13 23:37:40,203 [DEBUG] Importing XbmImagePlugin
+2026-04-13 23:37:40,204 [DEBUG] Importing XpmImagePlugin
+2026-04-13 23:37:40,204 [DEBUG] Importing XVThumbImagePlugin
+2026-04-13 23:37:40,270 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019EB3F7F710>
+2026-04-13 23:37:40,270 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019EAEAC6F90> server_hostname='huggingface.co' timeout=None
+2026-04-13 23:37:40,699 [DEBUG] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019EB3FDF7D0>
+2026-04-13 23:37:40,699 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2026-04-13 23:37:40,699 [DEBUG] send_request_headers.complete
+2026-04-13 23:37:40,699 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2026-04-13 23:37:40,699 [DEBUG] send_request_body.complete
+2026-04-13 23:37:40,699 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2026-04-13 23:37:41,166 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Mon, 13 Apr 2026 20:37:39 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"91f-c/wNK69zvqFrfkrqahErrQfcjWc"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69dd5413-5a586794297d63f077a56b51;47996239-37bf-4504-87ca-790cd18b3e22'), (b'RateLimit', b'"api";r=499;t=73'), (b'RateLimit-Policy', b'"fixed window";"api";q=500;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 74aca190c86294d9fc9f895c3ad62dda.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'MAA51-P2'), (b'X-Amz-Cf-Id', b'u7onqPAEO_JnONJCrtGrDf4Xt9TLMno5g6E1ok7G9nOJjXLK1iv8pw==')])
+2026-04-13 23:37:41,167 [INFO] HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-small/revision/main "HTTP/1.1 200 OK"
+2026-04-13 23:37:41,167 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2026-04-13 23:37:41,207 [DEBUG] receive_response_body.complete
+2026-04-13 23:37:41,207 [DEBUG] response_closed.started
+2026-04-13 23:37:41,207 [DEBUG] response_closed.complete
+2026-04-13 23:37:42,215 [INFO] Модель загружена. Готов к работе!
+2026-04-13 23:37:55,952 [INFO] Запись началась...
+2026-04-13 23:37:55,952 [DEBUG] Открываю поток: samplerate=16000, channels=1
+2026-04-13 23:37:55,976 [DEBUG] Поток записи открыт.
+2026-04-13 23:37:58,792 [INFO] Запись остановлена. Распознаю...
+2026-04-13 23:37:58,851 [DEBUG] stop(): фреймов накоплено = 108
+2026-04-13 23:37:58,851 [INFO] Аудио: 44928 сэмплов, пиковая амплитуда = 0.1020
+2026-04-13 23:37:58,852 [DEBUG] WAV сохранён: C:\Users\serjf\AppData\Local\Temp\tmpc1yam0ow.wav
+2026-04-13 23:37:58,915 [INFO] Processing audio with duration 00:02.808
+2026-04-13 23:37:58,975 [INFO] VAD filter removed 00:00.752 of audio
+2026-04-13 23:37:58,975 [DEBUG] VAD filter kept the following audio segments: [00:00.752 -> 00:02.808]
+2026-04-13 23:37:58,979 [DEBUG] Processing segment at 00:00.000
+2026-04-13 23:38:00,664 [INFO] Распознано: Чем мне тут проверить не понял
+2026-04-13 23:38:05,556 [INFO] Запись началась...
+2026-04-13 23:38:05,557 [DEBUG] Открываю поток: samplerate=16000, channels=1
+2026-04-13 23:38:05,574 [DEBUG] Поток записи открыт.
+2026-04-13 23:38:07,797 [INFO] Запись остановлена. Распознаю...
+2026-04-13 23:38:07,848 [DEBUG] stop(): фреймов накоплено = 85
+2026-04-13 23:38:07,848 [INFO] Аудио: 35360 сэмплов, пиковая амплитуда = 0.0641
+2026-04-13 23:38:07,849 [DEBUG] WAV сохранён: C:\Users\serjf\AppData\Local\Temp\tmp115v0386.wav
+2026-04-13 23:38:07,909 [INFO] Processing audio with duration 00:02.210
+2026-04-13 23:38:07,913 [INFO] VAD filter removed 00:00.000 of audio
+2026-04-13 23:38:07,913 [DEBUG] VAD filter kept the following audio segments: [00:00.000 -> 00:02.210]
+2026-04-13 23:38:07,916 [DEBUG] Processing segment at 00:00.000
+2026-04-13 23:38:09,682 [INFO] Распознано: что мне тут проверять не понял где

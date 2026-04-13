@@ -4,9 +4,22 @@ import pystray
 from PIL import Image, ImageDraw
 import sys
 import os
+import logging
 
 # Добавляем папку скрипта в путь
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, BASE_DIR)
+
+# Логирование в файл (т.к. запускается без консоли)
+log_path = os.path.join(BASE_DIR, "whisperflow.log")
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler(log_path, encoding="utf-8"),
+    ]
+)
+log = logging.getLogger("WhisperFlow")
 
 from recorder import Recorder
 from transcriber import Transcriber
@@ -89,13 +102,16 @@ def on_hotkey_press():
     if is_recording:
         return
     if transcriber is None:
-        print("[WhisperFlow] Модель ещё загружается, подождите...")
+        log.warning("Модель ещё загружается, подождите...")
         return
 
-    is_recording = True
-    update_tray(True)
-    print("[WhisperFlow] Запись началась...")
-    recorder.start()
+    log.info("Запись началась...")
+    try:
+        recorder.start()
+        is_recording = True
+        update_tray(True)
+    except Exception as e:
+        log.error(f"Ошибка запуска записи: {e}", exc_info=True)
 
 
 def on_hotkey_release():
@@ -104,29 +120,41 @@ def on_hotkey_release():
         return
 
     is_recording = False
-    print("[WhisperFlow] Запись остановлена. Распознаю...")
+    log.info("Запись остановлена. Распознаю...")
     update_tray(False)
 
-    wav_path = recorder.stop()
+    try:
+        wav_path = recorder.stop()
+    except Exception as e:
+        log.error(f"Ошибка остановки записи: {e}", exc_info=True)
+        return
+
     if not wav_path:
-        print("[WhisperFlow] Аудио не записано.")
+        log.warning("Аудио не записано (нет фреймов).")
         return
 
     # Распознавание и вставка в отдельном потоке
     def process():
-        text = transcriber.transcribe(wav_path)
-        if text:
-            print(f"[WhisperFlow] Распознано: {text}")
-            type_text(text)
-        else:
-            print("[WhisperFlow] Текст не распознан.")
+        try:
+            text = transcriber.transcribe(wav_path)
+            if text:
+                log.info(f"Распознано: {text}")
+                type_text(text)
+            else:
+                log.warning("Текст не распознан (пустой результат).")
+        except Exception as e:
+            log.error(f"Ошибка транскрибации: {e}", exc_info=True)
 
     threading.Thread(target=process, daemon=True).start()
 
 
 def load_model():
     global transcriber
-    transcriber = Transcriber()
+    try:
+        transcriber = Transcriber()
+        log.info("Модель загружена. Готов к работе!")
+    except Exception as e:
+        log.error(f"Ошибка загрузки модели: {e}", exc_info=True)
 
 
 def quit_app(icon, item):
@@ -145,7 +173,7 @@ def main():
     keyboard.on_press_key(HOTKEY, lambda _: on_hotkey_press(), suppress=True)
     keyboard.on_release_key(HOTKEY, lambda _: on_hotkey_release(), suppress=True)
 
-    print(f"[WhisperFlow] Запущен. Зажмите {HOTKEY.upper()} для записи.")
+    log.info(f"Запущен. Зажмите {HOTKEY.upper()} для записи.")
 
     # Иконка в трее
     menu = pystray.Menu(
