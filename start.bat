@@ -1,3 +1,3 @@
 @echo off
 cd /d "%~dp0"
-start "" pythonw.exe main.py
+PowerShell -Command "Start-Process pythonw -ArgumentList 'main.py' -WorkingDirectory '%~dp0' -Verb RunAs"
